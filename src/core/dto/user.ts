@@ -19,6 +19,4 @@ export class CreateUserDto {
   birthDate: Date;
 }
 
-export class updateUserDto extends CreateUserDto{
-
-}
+export class updateUserDto extends CreateUserDto {}
