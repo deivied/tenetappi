@@ -6,6 +6,5 @@ export class publication extends DefaultRef{
     content: any;
     author: user;
     vues: user[];
-    like: user[];
-    
+    like: user[];    
 }
