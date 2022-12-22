@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common/decorators/core/injectable.decorator';
-import { IDataServicesCrud } from 'src/core';
+import { IDataServicesCrud, UserEntity } from 'src/core';
 import { CreateUserDto, UpdateUserDto } from 'src/core/dto';
-import { Users } from 'src/frameworks/persistences/mongo/models';
 import { UserFactoryService } from './user-factory.service';
 
 @Injectable()
@@ -11,21 +10,21 @@ export class UserUseCase {
     private userFactory: UserFactoryService,
   ) {}
 
-  getAllUsers(): Promise<Users[]> {
-    return this.dataServiceCrud.user.getAll();
+  getAllUsers(): Promise<UserEntity[]> {
+    return this.dataServiceCrud.users.getAll();
   }
 
-  getUserById(id: any): Promise<Users> {
-    return this.dataServiceCrud.user.get(id);
+  getUserById(id: any): Promise<UserEntity> {
+    return this.dataServiceCrud.users.get(id);
   }
 
-  createUser(createUserDto: CreateUserDto): Promise<Users> {
+  createUser(createUserDto: CreateUserDto): Promise<UserEntity> {
     const user = this.userFactory.createNewUser(createUserDto);
-    return this.dataServiceCrud.user.create(user);
+    return this.dataServiceCrud.users.create(user);
   }
 
-  updateUser(userId: string, updateUser: UpdateUserDto): Promise<Users>{
+  updateUser(userId: string, updateUser: UpdateUserDto): Promise<UserEntity>{
     const user = this.userFactory.updateUser(updateUser)
-    return this.dataServiceCrud.user.update(userId, user)
+    return this.dataServiceCrud.users.update(userId, user)
   }
 }

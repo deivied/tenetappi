@@ -1,6 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Types } from 'mongoose';
-import { DefaultRef, Publication } from 'src/core';
+import { DefaultRef } from './default-ref.model';
+import { Publication } from './publication.model';
 
 export type UsersDocumment = Users & Document;
 
