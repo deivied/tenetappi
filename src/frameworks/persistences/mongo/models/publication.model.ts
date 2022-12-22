@@ -14,13 +14,13 @@ export class Publication extends DefaultRef {
   label: string;
 
   @Prop({ required: false, type: String })
-  descriptiojn: string;
-
-  @Prop({ required: false, type: [Types.ObjectId], ref: 'Media' })
-  content: Media[];
+  description: string;
 
   @Prop({ required: true, type: Types.ObjectId, ref: 'Users' })
   author: Users;
+  
+  @Prop({ required: false, type: [Types.ObjectId], ref: 'Media', default: []})
+  content: Media[];
 
   @Prop({ type: [Types.ObjectId], ref: 'Users',  default: [] })
   vues: Users[];
