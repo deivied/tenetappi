@@ -1,26 +1,26 @@
-import { IsString, IsNotEmpty, IsEmail, IsDate } from 'class-validator';
+import { IsString, IsNotEmpty, IsEmail, IsDate, IsEnum } from 'class-validator';
 import { EGender } from 'src/frameworks/persistences/mongo/models';
 
 export class CreateUserDto {
   @IsString()
-  @IsNotEmpty()
+  @IsNotEmpty({message: "firstName musn't be empty"})
   firstName: string;
 
   @IsString()
-  @IsNotEmpty()
+  @IsNotEmpty({message: "lastName musn't be empty"})
   lastName: string;
 
   @IsString()
-  @IsNotEmpty()
+  @IsNotEmpty({message: "gender musn't be empty"})
+  @IsEnum(EGender)
   gender: EGender;
 
   @IsString()
-  @IsNotEmpty()
+  @IsNotEmpty({message: "email musn't be empty"})
   @IsEmail()
   email: string;
 
-  @IsNotEmpty()
-  @IsDate()
+  @IsNotEmpty({message: "birthDate musn't be empty"})
   birthDate: Date;
 }
 

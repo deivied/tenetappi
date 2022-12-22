@@ -1,14 +1,14 @@
 import { EGender } from "src/frameworks/persistences/mongo/models";
-import { DefaultRef } from "./default-ref";
-import { Publication } from "./publication";
+import { PublicationEntity } from "..";
+import { DefaultRefEntity } from "./default-ref";
 
-export class User extends DefaultRef{
+export class UserEntity extends DefaultRefEntity{
     firstName: string;
     lastName: string;
     gender: EGender;
     email: string;
     birthDate: Date;
-    publications: Publication[];
-    followers: User[];
-    followings: User[];
+    publications: PublicationEntity[];
+    followers: UserEntity[];
+    followings: UserEntity[];
 }

@@ -1,7 +1,7 @@
-import { DefaultRef } from "./default-ref";
-import { User } from "./user";
+import { DefaultRefEntity } from "./default-ref";
+import { UserEntity } from "./user";
 
-export class Activities extends DefaultRef{
+export class ActivitiesEntity extends DefaultRefEntity{
     activitie: string;
-    enrolled: User[];
+    enrolled: UserEntity[];
 }

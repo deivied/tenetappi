@@ -1,11 +1,11 @@
-import { DefaultRef } from "./default-ref";
-import { Media } from "./media";
-import { User } from "./user";
+import { MediaEntity, UserEntity } from ".";
+import { DefaultRefEntity } from "./default-ref";
 
-export class Publication extends DefaultRef{
-    title: string;
-    content: Media;
-    author: User;
-    vues: User[];
-    like: User[];    
+export class PublicationEntity extends DefaultRefEntity{
+    label: string;
+    description: string;
+    content: MediaEntity[];
+    author: UserEntity;
+    vues: UserEntity[];
+    likes: UserEntity[];    
 }

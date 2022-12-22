@@ -1,25 +1,31 @@
-import { IsBoolean, IsNotEmpty, IsOptional, IsSemVer, IsString } from "class-validator";
-import { User } from "../entities";
+import { IsArray, IsBoolean, IsNotEmpty, IsOptional, IsString } from "class-validator";
+import { MediaEntity, UserEntity } from "..";
 
 export class CreatePublicationDTO{
     @IsOptional()
     @IsString()
-    title: string;
+    label: string;
+
+    @IsOptional()
+    @IsString()
+    description: string;
 
     @IsNotEmpty()
-    content: any;
+    @IsArray()
+    content: MediaEntity[];
 
     @IsNotEmpty()
-    author: User;
+    author: UserEntity;
 }
 
 export class UpdatePublicationDTO{
     @IsOptional()
     @IsString()
-    title: string;
-
-    @IsNotEmpty()
-    content: any;
+    label: string;
+    
+    @IsOptional()
+    @IsString()
+    description: string;
 
     @IsOptional()
     @IsBoolean()
