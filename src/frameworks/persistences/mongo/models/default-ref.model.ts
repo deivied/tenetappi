@@ -4,7 +4,7 @@ export type DefaultRefDocument = DefaultRef & Document;
 
 @Schema({})
 export class DefaultRef{
-    @Prop({type: Boolean, default: false})
+    @Prop({required: true, type: Boolean, default: false})
     isDeleted: boolean;
 
     @Prop({required: true, type: Date})
