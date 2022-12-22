@@ -1,4 +1,5 @@
 import { IsString, IsNotEmpty, IsEmail, IsDate } from 'class-validator';
+import { EGender } from 'src/frameworks/persistences/mongo/models';
 
 export class CreateUserDto {
   @IsString()
@@ -11,6 +12,10 @@ export class CreateUserDto {
 
   @IsString()
   @IsNotEmpty()
+  gender: EGender;
+
+  @IsString()
+  @IsNotEmpty()
   @IsEmail()
   email: string;
 
@@ -19,4 +24,4 @@ export class CreateUserDto {
   birthDate: Date;
 }
 
-export class updateUserDto extends CreateUserDto {}
+export class UpdateUserDto extends CreateUserDto {}
