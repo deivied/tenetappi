@@ -32,17 +32,17 @@ export class MongoServiceService
 
 
   onApplicationBootstrap() {
-    // this.users = new MongoServiceGeneric<Users>(this.usersModel, [
-    //   'publications',
-    // ]);
+    this.users = new MongoServiceGeneric<Users>(this.usersModel, [
+      'publications',
+    ]);
 
-    // this.publications = new MongoServiceGeneric<Publication>(
-    //   this.publicationModel,
-    //   ['users', 'media'],
-    // );
+    this.publications = new MongoServiceGeneric<Publication>(
+      this.publicationModel,
+      ['users', 'media'],
+    );
     // this.medias = new MongoServiceGeneric<Media>(this.mediaModel, [
     //   'users',
-    //   'publication',
+    //   'publications',
     // ]);
   }
 }

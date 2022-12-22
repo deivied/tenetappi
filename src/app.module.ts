@@ -22,6 +22,6 @@ import { ConfigModule } from '@nestjs/config';
     // }),
   ],
   controllers: [PublicationController, AppController, UsersController],
-  providers: [PublicationFactoryService],
+  providers: [],
 })
 export class AppModule {}
