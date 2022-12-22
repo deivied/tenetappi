@@ -25,9 +25,9 @@ export class MongoServiceService
     private mediaModel: Model<MediaDocument | Media>,
   ) {}
 
-  user: IGenericCrud<Users>;
-  publication: IGenericCrud<Publication>;
-  media: IGenericCrud<Media>;
+  user: MongoServiceGeneric<Users>;
+  publication: MongoServiceGeneric<Publication>;
+  media: MongoServiceGeneric<Media>;
 
   onApplicationBootstrap() {
     this.user = new MongoServiceGeneric<Users>(this.usersModel, [

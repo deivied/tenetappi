@@ -11,13 +11,13 @@ export enum EFormat {}
 
 @Schema()
 export class Media extends DefaultRef {
-  @Prop({ required: true, type: ETYPE })
+  @Prop({ required: true, type: String })
   type: ETYPE;
 
   @Prop({ required: true, type: String })
   URL: string;
 
-  @Prop({ type: Types.ObjectId, ref: Users.name, required: true })
+  @Prop({ type: Types.ObjectId, ref: 'Users', required: true })
   owner: Users;
 
   // @Prop({required: true, type: EFormat})

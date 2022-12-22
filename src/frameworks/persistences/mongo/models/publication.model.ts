@@ -16,16 +16,16 @@ export class Publication extends DefaultRef {
   @Prop({ required: false, type: String })
   descriptiojn: string;
 
-  @Prop({ required: false, type: [Types.ObjectId], ref: Media.name })
+  @Prop({ required: false, type: [Types.ObjectId], ref: 'Media' })
   content: Media[];
 
-  @Prop({ required: true, type: Types.ObjectId, ref: Users.name })
+  @Prop({ required: true, type: Types.ObjectId, ref: 'Users' })
   author: Users;
 
-  @Prop({ type: [Types.ObjectId], ref: Users.name })
+  @Prop({ type: [Types.ObjectId], ref: 'Users',  default: [] })
   vues: Users[];
 
-  @Prop({ type: [Types.ObjectId], ref: Users.name })
+  @Prop({ type: [Types.ObjectId], ref: 'Users',  default: [] })
   likes: Users[];
 }
 
