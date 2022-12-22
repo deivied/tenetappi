@@ -1,5 +1,5 @@
 import { IsBoolean, IsNotEmpty, IsOptional, IsSemVer, IsString } from "class-validator";
-import { user } from "../entities/user";
+import { User } from "../entities";
 
 export class CreatePublicationDTO{
     @IsOptional()
@@ -10,7 +10,7 @@ export class CreatePublicationDTO{
     content: any;
 
     @IsNotEmpty()
-    author: user;
+    author: User;
 }
 
 export class UpdatePublicationDTO{

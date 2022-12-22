@@ -1,10 +1,11 @@
 import { DefaultRef } from "./default-ref";
-import { user } from "./user";
+import { Media } from "./media";
+import { User } from "./user";
 
-export class publication extends DefaultRef{
+export class Publication extends DefaultRef{
     title: string;
-    content: any;
-    author: user;
-    vues: user[];
-    like: user[];    
+    content: Media;
+    author: User;
+    vues: User[];
+    like: User[];    
 }

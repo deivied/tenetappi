@@ -1,14 +1,22 @@
 import { DefaultRef } from "./default-ref";
-import { user } from "./user";
+import { User } from "./user";
 
 export enum ETYPE {
     VIDEO,
     IMAGE,
     AUDIO
 }
-export class media extends DefaultRef{
+export class Media extends DefaultRef{
+    type: ETYPE;
+    url: string;
+    owner: User;
+    date: Date;
+}
+
+//dans ce cas ci le sauvegarde des média ce fait dans la base de donnée!!!
+export class Medium extends DefaultRef{
     type: ETYPE;
     media: Blob;
-    owner: user;
+    owner: User;
     date: Date;
 }

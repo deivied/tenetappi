@@ -1,7 +1,7 @@
 import { DefaultRef } from "./default-ref";
-import { user } from "./user";
+import { User } from "./user";
 
-export class activities extends DefaultRef{
+export class Activities extends DefaultRef{
     activitie: string;
-    enrolled: user[];
+    enrolled: User[];
 }

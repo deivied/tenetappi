@@ -1,12 +1,12 @@
 import { DefaultRef } from "./default-ref";
-import { publication } from "./publication";
+import { Publication } from "./publication";
 
-export class user extends DefaultRef{
+export class User extends DefaultRef{
     firstName: string;
     lastName: string;
     email: string;
     birthDate: Date;
-    publications: publication[];
-    followers: user[];
-    followings: user[];
+    publications: Publication[];
+    followers: User[];
+    followings: User[];
 }
